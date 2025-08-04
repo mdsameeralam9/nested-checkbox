@@ -1,12 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import useCheckBoxState from './useCheckBoxState';
-
-
-export type NestedItem = {
-  id: string;
-  name: string;
-  children?: NestedItem[];
-};
+import type { NestedItem } from './data';
 
 type Props = {
   data: NestedItem[];
