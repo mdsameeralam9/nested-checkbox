@@ -64,7 +64,7 @@ const useCheckBoxState = () => {
     let parentNode = updateParent(nestedCheckboxData, currentId);
 
     while (parentNode) {
-      copyCurrentState[parentNode.id] = isChecked;
+      copyCurrentState[parentNode.id] = !!(parentNode.children && parentNode.children.every(chldnode => copyCurrentState[chldnode.id]));
       currentId = parentNode.id;
       parentNode = updateParent(nestedCheckboxData, currentId);
     }
